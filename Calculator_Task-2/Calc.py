@@ -83,7 +83,7 @@ class MainWindow(QWidget):
         elif btnText in ('(', ')', '%', '÷', '×', '-', '+'):
             if self.ScreenText == '' and btnText != '(' and self.numbers_and_operations[len(self.numbers_and_operations)-1] not in (')', '%'):
                 print('List: ', self.numbers_and_operations)
-                error.setText("InCorrect Equation!!                   1            ")
+                error.setText("InCorrect Equation!!                               ")
                 error.exec()
                 self.LCD_Screen.display(0)
                 self.ScreenText = ''
@@ -134,7 +134,7 @@ class MainWindow(QWidget):
                     try:
                         answer = eval(equation.strip())
                     except:
-                        error.setText("InCorrect Equation!!                2               ")
+                        error.setText("InCorrect Equation!!                               ")
                         error.exec()
                         self.LCD_Screen.display(0)
                     print('Equation: ', equation)
@@ -145,7 +145,7 @@ class MainWindow(QWidget):
                     self.ScreenText = ''
                     self.tempText = ''
 
-                elif self.ScreenText == '' or self.chkScreenText: #9 >= float(self.ScreenText) >= 0
+                elif self.ScreenText == '' or self.chkScreenText:
                     if self.ScreenText != '':
                         self.numbers_and_operations.append(self.ScreenText)
                     print('List: ', self.numbers_and_operations)
@@ -163,7 +163,7 @@ class MainWindow(QWidget):
                     try:
                         answer = eval(equation.strip())
                     except:
-                        error.setText("InCorrect Equation!!                   3            ")
+                        error.setText("InCorrect Equation!!                               ")
                         error.exec()
                         self.LCD_Screen.display(0)
                     print('Equation: ', equation)
@@ -172,12 +172,6 @@ class MainWindow(QWidget):
                     self.LCD_Screen.display(str(answer))
                     self.numbers_and_operations = []
                     self.ScreenText = ''
-                # elif self.tempText in ('.', '÷', '×', '-', '+') and self.numbers_and_operations[len(self.numbers_and_operations)-1] != ')':
-                #     print('List: ', self.numbers_and_operations)
-                #     error.exec()
-                #     self.ScreenText = ''
-                #     self.tempText = ''
-                #     self.numbers_and_operations = []
 
     # -------------------------Functions-------------------------------------------END
 
